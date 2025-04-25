@@ -24,6 +24,8 @@
 
 namespace block_mycertificates\util;
 
+use moodle_url;
+
 /**
  * Class to get the user certificates.
  *
@@ -31,7 +33,6 @@ namespace block_mycertificates\util;
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class certificates {
-
     /**
      * @var \stdClass $user The target user.
      */
@@ -263,6 +264,10 @@ class certificates {
         $returndata = [];
 
         foreach ($certificates as $certificate) {
+            $certificate->shareurl = new moodle_url('/blocks/mycertificates/linkedin/index.php', [
+                'courseid' => $certificate->courseid,
+                'certid' => $certificate->id,
+            ]);
             $certs = [$certificate];
             if (isset($returndata[$certificate->courseid])) {
                 $certs = array_merge($certs, $returndata[$certificate->courseid]['certificates']);

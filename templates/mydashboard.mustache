@@ -42,12 +42,31 @@
             <div class="card-body p-3">
                 <h4 class="card-title">{{{ fullname }}}</h4>
                 {{#certificates}}
-                    <p class="card-text"><a target="_blank" href="{{ downloadurl }}">{{# pix }} icon, {{{ module }}} {{/ pix }} {{{ name }}}</a></p>
+                    <p class="card-text">
+                        <a target="_blank" href="{{ downloadurl }}">
+                            {{# pix }} icon, {{{ module }}} {{/ pix }} {{{ name }}}
+                        </a>
+                        <!-- Share on LinkedIn button -->
+                    <p class="card-text">
+                        <a target="_blank" href="{{ downloadurl }}">
+                            {{# pix }} icon, {{{ module }}} {{/ pix }} {{{ name }}}
+                        </a>
+
+                        <!-- Share button -->
+                        <a 
+                            href="https://www.linkedin.com/sharing/share-offsite/?url={{ shareurl }}" 
+                            target="_blank"
+                            class="btn btn-sm btn-outline-primary ml-2"
+                        >
+                            <i class="fab fa-linkedin"></i> Share
+                        </a>
+                    </p>
+
                 {{/certificates}}
             </div>
         </div>
     {{/coursescertificates}}
-{{/hascertificates }}
+{{/hascertificates}}
 {{^hascertificates}}
     <p class="alert alert-info">{{#str}}nohavecertificates, block_mycertificates{{/str}}</p>
 {{/hascertificates}}
