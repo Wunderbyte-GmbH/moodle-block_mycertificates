@@ -256,7 +256,7 @@ class certificates {
     /**
      * Group certificates by course.
      *
-     * @param array $certificates
+     * @param $certificates
      *
      * @return array
      */
@@ -264,10 +264,7 @@ class certificates {
         $returndata = [];
 
         foreach ($certificates as $certificate) {
-            $certificate->shareurl = new moodle_url('/blocks/mycertificates/linkedin/index.php', [
-                'courseid' => $certificate->courseid,
-                'certid' => $certificate->id,
-            ]);
+            self::get_shareurl($certificate);
             $certs = [$certificate];
             if (isset($returndata[$certificate->courseid])) {
                 $certs = array_merge($certs, $returndata[$certificate->courseid]['certificates']);
@@ -286,5 +283,17 @@ class certificates {
         }
 
         return $returndata;
+    }
+
+    /**
+     * Group certificates by course.
+     *
+     * @param $certificate
+     *
+     * @return void
+     */
+    public static function get_shareurl(&$certificate) {
+        $course = get_course($certificate->courseid);
+        $certificate->shareurl = "https://mintcampus.org/lernangebote/" . $course->shortname;
     }
 }
