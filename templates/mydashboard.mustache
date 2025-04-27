@@ -43,7 +43,7 @@
                 <h4 class="card-title">{{{ fullname }}}</h4>
                 {{#certificates}}
                     <p class="card-text">
-                        <a class="btn btn-outline-primary" target="_blank" href="{{ downloadurl }}">
+                        <a class="btn btn-outline-primary cert" target="_blank" href="{{ downloadurl }}">
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Ebene_1" x="0px" y="0px" viewBox="0 0 128 140" style="enable-background:new 0 0 128 140;" xml:space="preserve"> <title>Leistungsnachweis</title> <style type="text/css"> .st0{fill:#551C77;} </style> <g id="Icons"> <g id="Pulpo"> <path id="Dokument" class="st0" d="M70.2,52.5V25.9H31.2c-2.6,0-4.7,2.1-4.7,4.7v90.6c0,2.6,2.1,4.7,4.7,4.7h65.6 c2.6,0,4.7-2.1,4.7-4.7V57.2H74.9C72.4,57.2,70.3,55.1,70.2,52.5L70.2,52.5z M82.8,98.6c0,1.3-1.1,2.3-2.3,2.3H47.6 c-1.3,0-2.3-1.1-2.3-2.3V97c0-1.3,1-2.3,2.3-2.3h32.8c1.3,0,2.3,1.1,2.3,2.3V98.6z M82.8,86.1c0,1.3-1.1,2.3-2.3,2.3H47.6 c-1.3,0-2.3-1.1-2.3-2.3v-1.6c0-1.3,1-2.3,2.3-2.3h32.8c1.3,0,2.3,1.1,2.3,2.3V86.1z M82.8,72v1.6c0,1.3-1.1,2.3-2.3,2.3H47.6 c-1.3,0-2.3-1.1-2.3-2.3V72c0-1.3,1-2.3,2.3-2.3h32.8C81.7,69.7,82.8,70.7,82.8,72z M101.5,49.7v1.2h-25v-25h1.2 c1.2,0,2.4,0.5,3.3,1.4l19.1,19.1C101,47.3,101.5,48.5,101.5,49.7z"></path> </g> </g> </svg> {{{ name }}}
                         </a>
                     <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ shareurl }}" 
@@ -64,8 +64,7 @@
 
 <style>
     .btn-outline-primary svg {
-        width: 15px;
-        height: 15px;
+        height: 22px;
         margin-right: 5px;
         fill: #551C77 !important;
     }
